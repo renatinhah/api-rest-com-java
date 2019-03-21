@@ -1,5 +1,8 @@
 package br.com.dito.desafio.renata.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.validation.Valid;
 
 import org.bson.types.ObjectId;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.dito.desafio.renata.entity.Timeline;
 import br.com.dito.desafio.renata.service.EventoService;
 
 @RestController
@@ -20,12 +24,12 @@ public class EventoController {
 	private EventoService eventoService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public void getAllEventos() {
-		eventoService.getAllEventos();
+	public HashMap<String, ArrayList<Timeline>> getAllEventos() {
+		return eventoService.getAllEventos();
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public void getEventoById(@PathVariable("id") ObjectId id) {
+	public void getEventoById(@PathVariable("id") String id) {
 		eventoService.getEventoById(id);
 	}
 	
