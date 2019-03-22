@@ -19,18 +19,9 @@ public class Evento {
 	
 	public Evento(){}
 	
-	public Evento(String id, String timestamp, double revenue, String storeName, String transactionId) {
-		this.id = id;
-		this.event = "comprou";
-		this.timestamp = timestamp;
+	public Evento(String event, double revenue) {
+		this.event = event;
 		this.revenue = revenue;
-	}
-	
-	public Evento(String id, String timestamp) {
-		this.id = id;
-		this.event = "comprou-produto";
-		this.timestamp = timestamp;
-	
 	}
 	
 	public String getId() {

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.dito.desafio.renata.entity.Evento;
 import br.com.dito.desafio.renata.entity.Timeline;
 import br.com.dito.desafio.renata.service.EventoService;
 
@@ -28,14 +29,14 @@ public class EventoController {
 		return eventoService.getAllEventos();
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public void getEventoById(@PathVariable("id") String id) {
-		eventoService.getEventoById(id);
+	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
+	public ArrayList<Evento> getEventoById(@PathVariable("name") String name) {
+		return eventoService.getEventoByEvent(name);
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public void create(@Valid @RequestBody String teste) {
-
+	public void create(@Valid @RequestBody Evento evento) {
+		eventoService.create(evento);
 	}
 	  
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

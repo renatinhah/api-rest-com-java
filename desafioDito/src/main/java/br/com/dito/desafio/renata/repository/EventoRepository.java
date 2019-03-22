@@ -16,5 +16,5 @@ public interface EventoRepository extends MongoRepository<Evento, String> {
 	ArrayList<Evento> findByEvent(String event, Sort sort);
 	ArrayList<Evento> findByCustomData_keyAndCustomData_value(String key, String value);
 	ArrayList<Evento> findByEventAndCustomData_keyAndCustomData_valueIn(String event, String key, HashSet<String> values);
-	
+	ArrayList<Evento> findByEventLike(String evento, Sort sort);
 }

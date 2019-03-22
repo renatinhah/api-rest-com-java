@@ -76,7 +76,7 @@ public class EventoService {
 		
 		return this.addProductsTimeline(transations, timelines);
 	}
-	
+
 	
 	public HashMap<String, ArrayList<Timeline>> getAllEventos() {
 		ArrayList<Evento> eventosComprou = eventoRepository.findByEvent(EventoEnum.EVENTO_COMPROU.getEvent(), new Sort(Sort.Direction.DESC,EventoEnum.TIMESTAMP.getEvent()));
@@ -89,12 +89,13 @@ public class EventoService {
 		eventoRepository.findById(id);
 	}
 	
-	public void getEventoByEvent(String event) {
-		
+	public ArrayList<Evento> getEventoByEvent(String event) {
+		ArrayList<Evento> eventos = eventoRepository.findByEventLike(event, new Sort(Sort.Direction.ASC, EventoEnum.EVENTO.getEvent()));
+		return eventos;
 	}
 	
 	public void create(Evento evento) {
-
+		eventoRepository.save(evento);
 	}
 
 	public void delete(ObjectId _id) {
