@@ -8,7 +8,8 @@ public enum EventoEnum {
 	PRODUCT_PRICE("product_price"),
 	TRANSACTION_ID("transaction_id"),
 	STORE_NAME("store_name"),
-	TIMESTAMP("timestamp");
+	TIMESTAMP("timestamp"),
+	EVENTO("event");
 	
 	
 	private String event;
