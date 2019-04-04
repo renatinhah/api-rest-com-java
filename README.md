@@ -1,4 +1,4 @@
-# desafioDito
+# Api rest 
 Tecnologias usadas
 * mongodb
 * spring boot
@@ -25,7 +25,7 @@ Para executar no terminal primeiro conecte-se no mongo usando o comando
 Em uma pasta do seu computador faça o clone do repositório com os seguintes comandos:
 
 * git init
-* git clone https://github.com/renatinhah/desafioDito.git
+* git clone https://github.com/renatinhah/api-rest-com-java.git
 * cd desafioDito/backend/
 
 Faça o build da aplicação
